@@ -1,0 +1,517 @@
+/* ===== CSS Variables ===== */
+:root {
+    /* Farben - erdige, natürliche Töne passend für Fleischhandel */
+    --color-primary: #2d3e2d;      /* Dunkelgrün */
+    --color-accent: #c14033;        /* Rostrot/Terrakotta */
+    --color-background: #faf9f7;    /* Warmes Off-White */
+    --color-text: #1a1a1a;
+    --color-text-light: #666666;
+    --color-white: #ffffff;
+    --color-border: #e0ddd9;
+    
+    /* Typografie */
+    --font-heading: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Schatten */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+    
+    /* Spacing */
+    --spacing: clamp(1rem, 3vw, 2rem);
+}
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+/* ===== Hero / Main Section ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    position: relative;
+}
+
+/* Subtiler Hintergrundeffekt */
+.hero::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(193, 64, 51, 0.03) 100%);
+    z-index: -1;
+}
+
+/* ===== Brand / Logo ===== */
+.brand {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.company-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--color-primary);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.company-legal {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* ===== Hero Content ===== */
+.hero-content {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--color-text-light);
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ===== CTA Section - PROMINENT PHONE ===== */
+.cta-section {
+    text-align: center;
+    margin: 3rem 0 4rem;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.cta-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.phone-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #a83529 100%);
+    color: var(--color-white);
+    padding: 1.5rem 3rem;
+    border-radius: 12px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.phone-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(193, 64, 51, 0.25);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.phone-button:active {
+    transform: translateY(-2px);
+}
+
+.phone-button svg {
+    flex-shrink: 0;
+    animation: ring 3s ease-in-out infinite;
+}
+
+@keyframes ring {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30% {
+        transform: rotate(-10deg);
+    }
+    20%, 40% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+.phone-number {
+    letter-spacing: 0.02em;
+}
+
+/* ===== About Section ===== */
+.about {
+    margin: 4rem 0;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.about-content {
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--color-border);
+}
+
+.about-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.about-content p {
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ===== Contact Grid ===== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background-color: var(--color-white);
+    padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 1rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.contact-card svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.contact-value {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.impressum-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.impressum-toggle:hover {
+    color: var(--color-accent);
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+/* ===== Impressum Overlay ===== */
+.impressum-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+}
+
+.impressum-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.impressum-content {
+    background-color: var(--color-white);
+    max-width: 800px;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.impressum-overlay.active .impressum-content {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--color-accent);
+}
+
+.impressum-inner {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.impressum-inner h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.impressum-inner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.impressum-inner h4 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.impressum-inner p {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.impressum-inner a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.impressum-inner a:hover {
+    color: var(--color-primary);
+}
+
+.impressum-inner hr {
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1px solid var(--color-border);
+}
+
+.legal-note {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 1.25rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .brand {
+        margin-bottom: 2rem;
+    }
+    
+    .company-name {
+        font-size: 2rem;
+    }
+    
+    .tagline {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-section {
+        margin: 2rem 0 3rem;
+    }
+    
+    .phone-button {
+        padding: 1.25rem 2rem;
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .phone-button svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .about-content {
+        padding: 1.75rem;
+    }
+    
+    .about-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .impressum-content {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .impressum-inner h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-button {
+        padding: 1rem 1.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .contact-card {
+        padding: 1.25rem;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .impressum-overlay,
+    .phone-button,
+    .impressum-toggle {
+        display: none;
+    }
+}
