@@ -4,8 +4,8 @@
     --color-primary: #1a1614;        /* Dunkelbraun/Schwarz */
     --color-accent: #b22222;          /* Fleischrot (Firebrick) */
     --color-secondary: #8b4513;       /* Sattelbraun */
-    --color-background: #f5f1ed;      /* Warmes Cremeweiß */
-    --color-paper: #faf8f5;           /* Papierfarbe */
+    --color-background: #ffffff;      /* Reines Weiß */
+    --color-paper: #ffffff;           /* Reines Weiß */
     --color-text: #2c2622;
     --color-text-light: #6b6561;
     --color-white: #ffffff;
@@ -38,26 +38,6 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     position: relative;
-}
-
-/* Subtile Textur im Hintergrund */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.015) 2px,
-            rgba(0, 0, 0, 0.015) 4px
-        );
-    z-index: -1;
-    pointer-events: none;
 }
 
 /* ===== Container ===== */
@@ -120,7 +100,7 @@ body::before {
 
 .company-name-hero {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
     color: var(--color-white);
     letter-spacing: -0.01em;
@@ -182,44 +162,18 @@ body::before {
 /* ===== Hero Content Full Width (unter Telefon) ===== */
 .hero-content-full-width {
     text-align: center;
-    margin: 3rem 0;
-    background: var(--color-paper);
-    padding: 3rem 2.5rem;
-    border-radius: 4px;
-    box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.08),
-        0 8px 24px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--color-border);
-    position: relative;
-}
-
-/* Subtiler Papier-Effekt */
-.hero-content-full-width::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        180deg,
-        transparent,
-        transparent 31px,
-        rgba(0, 0, 0, 0.02) 31px,
-        rgba(0, 0, 0, 0.02) 32px
-    );
-    pointer-events: none;
-    border-radius: 4px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    max-width: 900px;
 }
 
 .tagline-full {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display);
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     color: var(--color-primary);
     margin-bottom: 1.5rem;
     font-weight: 700;
     line-height: 1.3;
-    position: relative;
 }
 
 .subtitle-full {
@@ -227,7 +181,6 @@ body::before {
     color: var(--color-text);
     font-weight: 400;
     line-height: 1.8;
-    position: relative;
 }
 
 /* ===== Hero Section (alte Styles entfernen) ===== */
@@ -374,43 +327,16 @@ body::before {
 }
 
 .about-content {
-    background: var(--color-paper);
-    padding: 3rem 3.5rem;
-    border-radius: 4px;
-    box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.08),
-        0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--color-border);
+    padding: 0;
     margin-bottom: 3rem;
-    position: relative;
-}
-
-/* Dezente Linien wie auf Papier */
-.about-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        180deg,
-        transparent,
-        transparent 31px,
-        rgba(0, 0, 0, 0.02) 31px,
-        rgba(0, 0, 0, 0.02) 32px
-    );
-    pointer-events: none;
-    border-radius: 4px;
 }
 
 .about-content h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-display);
     font-size: 1.875rem;
     color: var(--color-primary);
     margin-bottom: 1.75rem;
     font-weight: 700;
-    position: relative;
 }
 
 .about-content p {
@@ -418,7 +344,6 @@ body::before {
     margin-bottom: 1.5rem;
     font-size: 1.075rem;
     line-height: 1.8;
-    position: relative;
 }
 
 .about-content p:last-child {
