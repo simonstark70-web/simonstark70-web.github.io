@@ -183,6 +183,105 @@ body {
     line-height: 1.8;
 }
 
+/* ===== Kernkompetenzen mit Icons ===== */
+.competencies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 5rem 0;
+    padding: 3rem 0;
+}
+
+.competency-item {
+    text-align: center;
+}
+
+.competency-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(178, 34, 34, 0.05), rgba(178, 34, 34, 0.1));
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.competency-item:hover .competency-icon {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, rgba(178, 34, 34, 0.1), rgba(178, 34, 34, 0.15));
+    box-shadow: 0 8px 24px rgba(178, 34, 34, 0.2);
+}
+
+.competency-icon svg {
+    stroke: var(--color-accent);
+}
+
+.competency-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.competency-item p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ===== Regionale Verwurzelung mit Karte ===== */
+.regional-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 5rem 0;
+    align-items: center;
+}
+
+.regional-content h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.regional-content p {
+    font-size: 1.075rem;
+    color: var(--color-text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 4px;
+}
+
+.map-link:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+    transform: translateX(4px);
+}
+
+.regional-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
 /* ===== Hero Section (alte Styles entfernen) ===== */
 
 /* ===== Hero Content - Papier-Stil ===== */
@@ -263,6 +362,76 @@ body {
     color: var(--color-text-light);
     margin-bottom: 1.5rem;
     font-weight: 600;
+}
+
+/* ===== Floating Phone Button (Sticky) ===== */
+.floating-phone-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #8b1a1a 100%);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 16px rgba(178, 34, 34, 0.3),
+        0 8px 32px rgba(178, 34, 34, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: floatIn 0.6s ease 1s both;
+}
+
+.floating-phone-button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 
+        0 8px 24px rgba(178, 34, 34, 0.4),
+        0 12px 40px rgba(178, 34, 34, 0.3);
+}
+
+.floating-phone-button:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulsing effect */
+.floating-phone-button::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    opacity: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
 }
 
 .phone-display {
@@ -596,6 +765,30 @@ body {
         padding: 2rem 1.5rem;
     }
     
+    .competencies {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+    
+    .regional-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .floating-phone-button {
+        width: 56px;
+        height: 56px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .floating-phone-button svg {
+        width: 22px;
+        height: 22px;
+    }
+    
     .footer-buttons {
         justify-content: center;
         gap: 1.5rem;
@@ -700,6 +893,32 @@ body {
     .phone-display {
         padding: 1.25rem 2rem;
         font-size: 1.5rem;
+    }
+    
+    .competencies {
+        gap: 2rem;
+    }
+    
+    .competency-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .competency-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .floating-phone-button {
+        width: 52px;
+        height: 52px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .floating-phone-button svg {
+        width: 20px;
+        height: 20px;
     }
     
     .footer-buttons {
