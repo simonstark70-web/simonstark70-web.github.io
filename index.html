@@ -51,30 +51,48 @@
                     </div>
                 </div>
 
-                <!-- Kontaktinfo - dezent im Footer-Stil -->
-                <div class="contact-info-footer">
-                    <div class="footer-contact-item">
-                        <span class="label">Sitz der Gesellschaft:</span>
-                        <span class="value">Kleiberweg 8, 35066 Frankenberg</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <span class="label">Betriebsstandort:</span>
-                        <span class="value">Gashol 1, 34474 Diemelstadt</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <span class="label">Geschäftsführung:</span>
-                        <span class="value">Sebastian Krautwald</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer mit Impressum-Link -->
+            <!-- Footer mit Buttons -->
             <footer class="footer">
-                <button class="impressum-toggle" onclick="toggleImpressum()">Impressum & Datenschutz</button>
+                <div class="footer-buttons">
+                    <button class="footer-button" onclick="toggleKontakt()">Kontakt</button>
+                    <button class="footer-button" onclick="toggleImpressum()">Impressum</button>
+                    <button class="footer-button" onclick="toggleDatenschutz()">Datenschutz</button>
+                </div>
                 <p class="copyright">&copy; 2024 Nordhessen-Fleisch GmbH & Co. KG</p>
             </footer>
         </div>
     </main>
+
+    <!-- Kontakt Overlay -->
+    <div class="impressum-overlay" id="kontaktOverlay">
+        <div class="impressum-content">
+            <button class="close-button" onclick="toggleKontakt()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+
+            <div class="impressum-inner">
+                <h2>Kontakt</h2>
+                
+                <h3>Telefon</h3>
+                <p><strong>05694 2226</strong></p>
+                
+                <h3>E-Mail</h3>
+                <p><strong>[Ihre E-Mail-Adresse hier einfügen]</strong></p>
+                
+                <h3>Sitz der Gesellschaft</h3>
+                <p>Kleiberweg 8<br>35066 Frankenberg</p>
+                
+                <h3>Betriebsstandort</h3>
+                <p>Gashol 1<br>34474 Diemelstadt</p>
+                
+                <h3>Geschäftsführung</h3>
+                <p>Sebastian Krautwald</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Impressum Overlay (ausklappbar) -->
     <div class="impressum-overlay" id="impressumOverlay">
@@ -139,9 +157,21 @@
 
                 <h3>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>
                 <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+        </div>
+    </div>
 
-                <hr>
+    <!-- Datenschutz Overlay -->
+    <div class="impressum-overlay" id="datenschutzOverlay">
+        <div class="impressum-content">
+            <button class="close-button" onclick="toggleDatenschutz()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
 
+            <div class="impressum-inner">
                 <h2>Datenschutzerklärung</h2>
 
                 <h3>1. Datenschutz auf einen Blick</h3>
