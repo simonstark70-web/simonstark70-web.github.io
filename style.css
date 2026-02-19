@@ -179,6 +179,57 @@ body::before {
     padding-top: 2rem;
 }
 
+/* ===== Hero Content Full Width (unter Telefon) ===== */
+.hero-content-full-width {
+    text-align: center;
+    margin: 3rem 0;
+    background: var(--color-paper);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+/* Subtiler Papier-Effekt */
+.hero-content-full-width::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        transparent,
+        transparent 31px,
+        rgba(0, 0, 0, 0.02) 31px,
+        rgba(0, 0, 0, 0.02) 32px
+    );
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+.tagline-full {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative;
+}
+
+.subtitle-full {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: var(--color-text);
+    font-weight: 400;
+    line-height: 1.8;
+    position: relative;
+}
+
 /* ===== Hero Section (alte Styles entfernen) ===== */
 
 /* ===== Hero Content - Papier-Stil ===== */
@@ -600,7 +651,20 @@ body::before {
     }
     
     .cta-section {
-        margin: 1rem 0 3rem;
+        margin: 1rem 0 2rem;
+    }
+    
+    .hero-content-full-width {
+        padding: 2rem 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .tagline-full {
+        font-size: 1.65rem;
+    }
+    
+    .subtitle-full {
+        font-size: 1.05rem;
     }
     
     .hero-content {
