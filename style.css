@@ -341,51 +341,36 @@ body::before {
     font-weight: 700;
 }
 
-/* ===== Vereinfachte Kontakt-Info ===== */
-.contact-info-simple {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+/* ===== Dezente Kontakt-Info im Footer-Stil ===== */
+.contact-info-footer {
     max-width: 650px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
 }
 
-.info-item {
+.footer-contact-item {
     display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    background: var(--color-white);
-    padding: 1.5rem 2rem;
-    border-radius: 4px;
-    border-left: 4px solid var(--color-accent);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-}
-
-.info-item:hover {
-    transform: translateX(6px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.info-icon {
-    font-size: 1.75rem;
-    flex-shrink: 0;
-}
-
-.info-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-light);
-    margin-bottom: 0.25rem;
-    font-weight: 700;
-}
-
-.info-text {
-    font-size: 1rem;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
     color: var(--color-text);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-contact-item:last-child {
+    border-bottom: none;
+}
+
+.footer-contact-item .label {
+    color: var(--color-text-light);
+    font-weight: 400;
+}
+
+.footer-contact-item .value {
+    text-align: right;
     font-weight: 500;
-    line-height: 1.6;
+    color: var(--color-text);
 }
 
 /* ===== Footer ===== */
@@ -612,8 +597,18 @@ body::before {
         font-size: 1.65rem;
     }
     
-    .info-item {
-        padding: 1.25rem 1.5rem;
+    .contact-info-footer {
+        padding: 1.5rem 0;
+    }
+    
+    .footer-contact-item {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 1rem 0;
+    }
+    
+    .footer-contact-item .value {
+        text-align: left;
     }
     
     .impressum-content {
@@ -632,12 +627,8 @@ body::before {
         font-size: 1.5rem;
     }
     
-    .info-item {
-        padding: 1rem 1.25rem;
-    }
-    
-    .info-icon {
-        font-size: 1.5rem;
+    .footer-contact-item {
+        font-size: 0.875rem;
     }
 }
 
