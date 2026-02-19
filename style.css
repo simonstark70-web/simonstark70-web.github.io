@@ -67,83 +67,99 @@ body::before {
     padding: 0 2rem;
 }
 
-/* ===== Hero Section ===== */
-.hero {
-    min-height: 100vh;
+/* ===== Hero Fullscreen mit Bild als Hintergrund ===== */
+.hero-fullscreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
     display: flex;
     align-items: center;
-    padding: 4rem 0 3rem;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* ===== Brand - mehr Abstand ===== */
-.brand {
+/* Hintergrundbild */
+.hero-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('hero-fleisch.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Dunkles Overlay für Kontrast */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 22, 20, 0.7) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+/* Text über dem Bild */
+.hero-content-overlay {
+    position: relative;
+    z-index: 3;
     text-align: center;
-    margin-bottom: 3.5rem;
-    margin-top: 2.5rem;
-    animation: fadeInDown 0.8s ease;
+    color: var(--color-white);
+    animation: fadeInUp 1s ease;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.company-name {
+.company-name-hero {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-white);
     letter-spacing: -0.01em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     position: relative;
     display: inline-block;
 }
 
 /* Elegante Unterstreichung */
-.company-name::after {
+.company-name-hero::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
+    width: 100px;
+    height: 4px;
     background: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(178, 34, 34, 0.5);
 }
 
-.company-legal {
-    font-size: 0.95rem;
-    color: var(--color-text-light);
+.company-legal-hero {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Hero Banner Bild ===== */
-.hero-banner {
-    margin: 3rem 0 2.5rem;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.15),
-        0 8px 32px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 0.8s ease 0.3s both;
+/* ===== Main Content Bereich ===== */
+.main-content {
+    background-color: var(--color-background);
+    padding-top: 4rem;
 }
 
-.banner-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    max-height: 500px;
-}
+/* ===== Hero Section (alte Styles entfernen) ===== */
 
 /* ===== Hero Content - Papier-Stil ===== */
 .hero-content {
@@ -158,6 +174,9 @@ body::before {
         0 8px 24px rgba(0, 0, 0, 0.06);
     border: 1px solid var(--color-border);
     position: relative;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Subtiler Papier-Effekt */
@@ -528,26 +547,22 @@ body::before {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-    .hero {
-        min-height: auto;
-        padding: 3rem 0 2rem;
+    .hero-fullscreen {
+        height: 70vh;
+        min-height: 500px;
+        max-height: 600px;
     }
     
-    .brand {
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
+    .company-name-hero {
+        font-size: 3rem;
     }
     
-    .company-name {
-        font-size: 2.25rem;
+    .company-legal-hero {
+        font-size: 1rem;
     }
     
-    .hero-banner {
-        margin: 2rem 0;
-    }
-    
-    .banner-image {
-        max-height: 300px;
+    .main-content {
+        padding-top: 3rem;
     }
     
     .hero-content {
@@ -620,6 +635,25 @@ body::before {
 @media (max-width: 480px) {
     .container {
         padding: 0 1.25rem;
+    }
+    
+    .hero-fullscreen {
+        height: 60vh;
+        min-height: 450px;
+    }
+    
+    .company-name-hero {
+        font-size: 2.5rem;
+    }
+    
+    .company-name-hero::after {
+        width: 80px;
+        height: 3px;
+    }
+    
+    .company-legal-hero {
+        font-size: 0.875rem;
+        letter-spacing: 0.15em;
     }
     
     .phone-display {
