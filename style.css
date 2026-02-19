@@ -248,12 +248,12 @@ body::before {
 /* ===== CTA Section - Professionell & Prominent ===== */
 .cta-section {
     text-align: center;
-    margin: 3rem 0 4rem;
+    margin: 2rem 0 4rem;
     animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .cta-label {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-text-light);
