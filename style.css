@@ -71,9 +71,9 @@ body::before {
 .hero-fullscreen {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 600px;
-    max-height: 800px;
+    height: 85vh;
+    min-height: 500px;
+    max-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,12 +248,12 @@ body::before {
 /* ===== CTA Section - Professionell & Prominent ===== */
 .cta-section {
     text-align: center;
-    margin: 1.5rem 0 4rem;
+    margin: 2rem 0 4rem;
     animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .cta-label {
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-text-light);
@@ -420,7 +420,15 @@ body::before {
     border-top: 2px solid var(--color-border);
 }
 
-.impressum-toggle {
+.footer-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-button {
     background: var(--color-primary);
     border: none;
     color: var(--color-white);
@@ -435,7 +443,7 @@ body::before {
     letter-spacing: 0.05em;
 }
 
-.impressum-toggle:hover {
+.footer-button:hover {
     background: var(--color-accent);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(178, 34, 34, 0.2);
