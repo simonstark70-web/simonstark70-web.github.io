@@ -120,9 +120,8 @@ body::before {
 
 .company-name-hero {
     font-family: 'Oswald', sans-serif;
-    font-weight: 800;
     font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--color-white);
     letter-spacing: -0.01em;
     margin-bottom: 1rem;
