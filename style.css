@@ -103,7 +103,7 @@ body {
 
 .company-name-hero {
     font-family: var(--font-body);
-    font-size: 1.5rem;
+    font-size: 4rem;
     font-weight: 400;
     color: var(--color-white);
     letter-spacing: 0.25em;
