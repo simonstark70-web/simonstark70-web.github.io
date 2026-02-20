@@ -1,10 +1,10 @@
 /* ===== CSS Variables - Fleischerei Design ===== */
 :root {
-    /* Erdige, professionelle Farben */
+    /* Erdige, professionelle Farben mit Wiesen-Grün */
     --color-primary: #1a1614;        /* Dunkelbraun/Schwarz */
-    --color-accent: #b22222;          /* Fleischrot (Firebrick) */
-    --color-secondary: #8b4513;       /* Sattelbraun */
-    --color-background: #ffffff;      /* Reines Weiß */
+    --color-accent: #4a7c59;          /* Wiesen-Grün (Meadow Green) */
+    --color-secondary: #6b8e23;       /* Olivgrün */
+    --color-background: #f5f5f5;      /* Helles Lichtgrau */
     --color-paper: #ffffff;           /* Reines Weiß */
     --color-text: #2c2622;
     --color-text-light: #6b6561;
@@ -133,24 +133,13 @@ body {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.hero-tagline {
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+.hero-quality-statement {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: var(--color-white);
-    font-weight: 600;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
-    line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto;
+    margin-top: 3rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-style: italic;
 }
 
 /* ===== Main Content Bereich ===== */
@@ -159,89 +148,57 @@ body {
     padding-top: 2rem;
 }
 
-/* ===== Hero Content Full Width (unter Telefon) ===== */
-.hero-content-full-width {
+/* ===== Hauptüberschrift H2 ===== */
+.main-headline-section {
     text-align: center;
-    margin: 3rem auto;
-    padding: 2rem 2.5rem;
+    margin: 3rem auto 4rem;
     max-width: 900px;
 }
 
-.tagline-full {
+.main-headline {
     font-family: var(--font-display);
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    line-height: 1.3;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
-.subtitle-full {
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-    color: var(--color-text);
-    font-weight: 400;
-    line-height: 1.8;
-}
-
-/* ===== Kernkompetenzen mit Icons ===== */
-.competencies {
+/* ===== Kernkompetenzen ohne Icons ===== */
+.core-services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin: 5rem 0;
-    padding: 3rem 0;
+    gap: 2rem;
+    margin: 0 auto 5rem;
+    max-width: 1000px;
 }
 
-.competency-item {
+.service-item {
     text-align: center;
-}
-
-.competency-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(178, 34, 34, 0.05), rgba(178, 34, 34, 0.1));
-    border-radius: 50%;
+    padding: 2rem 1rem;
+    border-bottom: 3px solid var(--color-accent);
     transition: all 0.3s ease;
 }
 
-.competency-item:hover .competency-icon {
-    transform: translateY(-8px);
-    background: linear-gradient(135deg, rgba(178, 34, 34, 0.1), rgba(178, 34, 34, 0.15));
-    box-shadow: 0 8px 24px rgba(178, 34, 34, 0.2);
+.service-item:hover {
+    transform: translateY(-4px);
+    border-bottom-width: 5px;
 }
 
-.competency-icon svg {
-    stroke: var(--color-accent);
-}
-
-.competency-item h3 {
+.service-item h3 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--color-primary);
-    margin-bottom: 0.75rem;
     font-weight: 700;
 }
 
-.competency-item p {
-    font-size: 0.95rem;
-    color: var(--color-text-light);
-    line-height: 1.6;
+/* ===== Regionale Sektion Kompakt ===== */
+.regional-section-compact {
+    text-align: center;
+    margin: 5rem auto;
+    max-width: 800px;
 }
 
-/* ===== Regionale Verwurzelung mit Karte ===== */
-.regional-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin: 5rem 0;
-    align-items: center;
-}
-
-.regional-content h2 {
+.regional-section-compact h2 {
     font-family: var(--font-display);
     font-size: 2rem;
     color: var(--color-primary);
@@ -249,11 +206,26 @@ body {
     font-weight: 700;
 }
 
-.regional-content p {
+.regional-section-compact p {
     font-size: 1.075rem;
     color: var(--color-text);
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.small-map {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .map-link {
@@ -273,13 +245,6 @@ body {
     background: var(--color-accent);
     color: var(--color-white);
     transform: translateX(4px);
-}
-
-.regional-map img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== Hero Section (alte Styles entfernen) ===== */
@@ -371,15 +336,15 @@ body {
     right: 2rem;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--color-accent) 0%, #8b1a1a 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #3a6b47 100%);
     color: var(--color-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 
-        0 4px 16px rgba(178, 34, 34, 0.3),
-        0 8px 32px rgba(178, 34, 34, 0.2);
+        0 4px 16px rgba(74, 124, 89, 0.3),
+        0 8px 32px rgba(74, 124, 89, 0.2);
     z-index: 999;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -389,8 +354,8 @@ body {
 .floating-phone-button:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 
-        0 8px 24px rgba(178, 34, 34, 0.4),
-        0 12px 40px rgba(178, 34, 34, 0.3);
+        0 8px 24px rgba(74, 124, 89, 0.4),
+        0 12px 40px rgba(74, 124, 89, 0.3);
 }
 
 .floating-phone-button:active {
@@ -438,14 +403,14 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 1.25rem;
-    background: linear-gradient(135deg, var(--color-accent) 0%, #8b1a1a 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #3a6b47 100%);
     color: var(--color-white);
     padding: 1.75rem 3.5rem;
     border-radius: 4px;
     font-size: 2rem;
     font-weight: 700;
     box-shadow: 
-        0 4px 16px rgba(178, 34, 34, 0.25),
+        0 4px 16px rgba(74, 124, 89, 0.25),
         0 0 0 1px rgba(0, 0, 0, 0.05);
     position: relative;
     cursor: default;
